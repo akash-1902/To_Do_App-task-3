@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+    background: linear-gradient(135deg,red,blue);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.app{
+    width: 570px;
+    padding: 10px;
+    font-family: sans-serif;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 30px;
+}
+.container{
+    width: 100%;
+    max-width: 540px;
+    margin: 10px auto auto;
+    padding: 40px 30px; 
+    background: rgb(241, 241, 241);
+    border-radius: 10px;
+}
+.container h2{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: black;
+}
+.container h2 img{
+    width: 40px;
+    margin-left: 10px;
+}
+#wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(218, 216, 216);
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+#wrapper input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px ;
+}
+#wrapper button{
+    border: none;
+    outline: none;
+    padding: 15px 50px;
+    background-color: blue;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+#tasks{
+    margin-top: 30px;
+    width: 100%;
+    position: relative;
+}
+.task{
+    background-color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: 1fr 8fr 2fr 2fr;
+    gap: 16px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    align-items: center;
+    cursor: pointer;
+}
+.task:not(:first-child){
+    margin-top: 16px;
+}
+.task input[type="checkbox"]{
+    position: relative;
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 2px solid #e1e1e1;
+}
+.task input[type="checkbox"]:before{
+    content: "";
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.task input[type="checkbox"]:checked{
+    background-color: blue;
+    border-color: blue;
+}
+.task input[type="checkbox"]:checked:before{
+    position: absolute;
+    content: "\f00c";
+    color: #ffffff;
+    font-size: 12px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.task span{
+    font: 14px;
+    font-weight: 400;
+    word-break: break-all;
+}
+.task button{
+    color: #ffffff;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+} 
+.edit{
+    background-color: blue;
+}  
+.delete{
+    background-color: red;
+}
+#pending-task span{
+    color: blue;
+}
+.completed{
+    text-decoration: line-through;
+    color: #a0a0a0;
+}
+#error{
+    text-align: center;
+    background-color: white;
+    color: red;
+    margin: 20px 5px;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+@media screen and (max-width:576px) {
+    .app{
+        width: 100%;
+        text-align: center;
+    }
+    .container{
+        max-width: 400px;
+    }
+    #wrapper{
+        padding-left:10px;
+    }
+}
